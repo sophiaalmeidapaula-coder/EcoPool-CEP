@@ -1,0 +1,1429 @@
+/* =========================================================
+   ECOPOOL CEP
+   CSS - Projeto Integrador
+   Energia Solar + Piscina + Robótica + Óptica
+========================================================= */
+
+
+/* =========================================================
+   1. VARIÁVEIS
+========================================================= */
+
+:root {
+    --azul-profundo: #032f36;
+    --azul-escuro: #064852;
+    --azul: #087f8c;
+    --azul-claro: #19a7b5;
+
+    --verde: #6ee77c;
+    --verde-escuro: #299b52;
+    --verde-claro: #dff8e3;
+
+    --branco: #ffffff;
+    --cinza-claro: #f4f9f8;
+    --cinza: #e4eeee;
+    --cinza-texto: #536b70;
+    --preto: #14282d;
+
+    --sombra: 0 10px 30px rgba(3, 47, 54, 0.12);
+    --sombra-forte: 0 18px 45px rgba(3, 47, 54, 0.18);
+
+    --raio: 18px;
+    --transicao: 0.3s ease;
+}
+
+
+/* =========================================================
+   2. RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+    color: var(--preto);
+    background: var(--cinza-claro);
+    overflow-x: hidden;
+}
+
+body,
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    font-family: inherit;
+}
+
+::selection {
+    background: var(--verde);
+    color: var(--azul-profundo);
+}
+
+
+/* =========================================================
+   3. ACESSIBILIDADE
+========================================================= */
+
+:focus-visible {
+    outline: 4px solid var(--verde);
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   4. HEADER
+========================================================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+
+    background: rgba(3, 47, 54, 0.96);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+}
+
+.navbar {
+    width: min(1200px, 92%);
+    min-height: 76px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   5. LOGO
+========================================================= */
+
+.logo {
+    position: relative;
+
+    font-size: 1.55rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+
+    color: var(--branco);
+}
+
+.logo::before {
+    content: "☀";
+    margin-right: 8px;
+    color: var(--verde);
+}
+
+.logo span {
+    color: var(--verde);
+}
+
+
+/* =========================================================
+   6. MENU
+========================================================= */
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    list-style: none;
+}
+
+.menu li a {
+    position: relative;
+
+    display: block;
+
+    padding: 9px 12px;
+
+    color: var(--branco);
+
+    font-size: 0.93rem;
+    font-weight: 600;
+
+    border-radius: 8px;
+
+    transition: var(--transicao);
+}
+
+.menu li a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 12px;
+    right: 12px;
+    bottom: 3px;
+
+    height: 2px;
+
+    background: var(--verde);
+
+    transform: scaleX(0);
+    transform-origin: center;
+
+    transition: var(--transicao);
+}
+
+.menu li a:hover {
+    color: var(--verde);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.menu li a:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* =========================================================
+   7. BOTÃO MENU MOBILE
+========================================================= */
+
+.menu-btn {
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+
+    background: transparent;
+    color: var(--branco);
+
+    font-size: 1.4rem;
+
+    cursor: pointer;
+
+    transition: var(--transicao);
+}
+
+.menu-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* =========================================================
+   8. HERO
+========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: calc(100vh - 76px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 100px 20px;
+
+    color: var(--branco);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(3, 47, 54, 0.96),
+            rgba(5, 105, 116, 0.83)
+        ),
+        url("assets/piscina-solar.jpg")
+        center / cover no-repeat;
+
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    top: -250px;
+    right: -180px;
+
+    border-radius: 50%;
+
+    background: rgba(110, 231, 124, 0.15);
+
+    filter: blur(5px);
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: -120px;
+    left: -5%;
+
+    width: 110%;
+    height: 200px;
+
+    background: var(--cinza-claro);
+
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(900px, 100%);
+
+    text-align: center;
+
+    animation: aparecer 1s ease forwards;
+}
+
+.hero h1 {
+    margin-bottom: 20px;
+
+    font-size: clamp(3.5rem, 9vw, 7rem);
+
+    line-height: 1;
+
+    letter-spacing: -4px;
+
+    text-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.hero h1 span {
+    color: var(--verde);
+}
+
+.hero p {
+    max-width: 700px;
+
+    margin: 0 auto 35px;
+
+    font-size: clamp(1rem, 2vw, 1.3rem);
+
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* =========================================================
+   9. BOTÃO PRINCIPAL
+========================================================= */
+
+.btn {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 50px;
+
+    padding: 13px 28px;
+
+    border: 2px solid transparent;
+    border-radius: 50px;
+
+    background: var(--verde);
+    color: var(--azul-profundo);
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 25px rgba(110, 231, 124, 0.25);
+
+    transition: var(--transicao);
+
+    overflow: hidden;
+}
+
+.btn::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 70%;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.35);
+
+    transform: skewX(-25deg);
+
+    transition: 0.5s;
+}
+
+.btn:hover::before {
+    left: 130%;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 14px 30px rgba(110, 231, 124, 0.35);
+
+    background: #86ed91;
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* =========================================================
+   10. SEÇÕES
+========================================================= */
+
+section {
+    position: relative;
+    padding: 100px 20px;
+}
+
+.container {
+    width: min(1120px, 92%);
+    margin: auto;
+}
+
+.section-title {
+    margin-bottom: 55px;
+    text-align: center;
+}
+
+.section-title h2 {
+    position: relative;
+
+    display: inline-block;
+
+    margin-bottom: 16px;
+
+    color: var(--azul-escuro);
+
+    font-size: clamp(2rem, 4vw, 2.8rem);
+
+    line-height: 1.2;
+}
+
+.section-title h2::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 4px;
+
+    margin: 14px auto 0;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        var(--azul),
+        var(--verde)
+    );
+}
+
+.section-title p {
+    max-width: 720px;
+
+    margin: auto;
+
+    color: var(--cinza-texto);
+
+    font-size: 1.05rem;
+}
+
+
+/* =========================================================
+   11. PROJETO
+========================================================= */
+
+.project {
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(110, 231, 124, 0.12),
+            transparent 30%
+        ),
+        #e8f6f2;
+}
+
+.project-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+.project-text h3 {
+    margin-bottom: 18px;
+
+    color: var(--azul-escuro);
+
+    font-size: 1.9rem;
+}
+
+.project-text p {
+    margin-bottom: 16px;
+
+    color: var(--cinza-texto);
+}
+
+.project-list {
+    display: grid;
+
+    gap: 12px;
+
+    margin-top: 25px;
+
+    list-style: none;
+}
+
+.project-list li {
+    position: relative;
+
+    padding: 13px 18px 13px 45px;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    border-radius: 10px;
+
+    color: var(--azul-profundo);
+
+    font-weight: 600;
+
+    box-shadow:
+        0 4px 15px rgba(3, 47, 54, 0.05);
+}
+
+.project-list li::before {
+    content: "✓";
+
+    position: absolute;
+
+    left: 15px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    display: grid;
+    place-items: center;
+
+    width: 24px;
+    height: 24px;
+
+    border-radius: 50%;
+
+    background: var(--verde);
+
+    color: var(--azul-profundo);
+
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   12. IMAGEM DO PROJETO
+========================================================= */
+
+.project-image {
+    position: relative;
+
+    min-height: 420px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            rgba(3, 47, 54, 0.1),
+            rgba(3, 47, 54, 0.25)
+        ),
+        url("assets/coletor-solar.jpg")
+        center / cover no-repeat;
+
+    box-shadow: var(--sombra-forte);
+
+    overflow: hidden;
+
+    transition: var(--transicao);
+}
+
+.project-image::before {
+    content: "ENERGIA SOLAR";
+
+    position: absolute;
+
+    left: 20px;
+    bottom: 20px;
+
+    padding: 8px 15px;
+
+    border-radius: 50px;
+
+    background: rgba(3, 47, 54, 0.85);
+
+    color: var(--verde);
+
+    font-size: 0.8rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.project-image:hover {
+    transform: scale(1.02);
+}
+
+
+/* =========================================================
+   13. CARDS
+========================================================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.card {
+    position: relative;
+
+    padding: 32px;
+
+    background: var(--branco);
+
+    border: 1px solid var(--cinza);
+
+    border-radius: var(--raio);
+
+    box-shadow: var(--sombra);
+
+    overflow: hidden;
+
+    transition: var(--transicao);
+}
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        var(--azul),
+        var(--verde)
+    );
+}
+
+.card:hover {
+    transform: translateY(-10px);
+
+    box-shadow: var(--sombra-forte);
+}
+
+.card-icon {
+    display: grid;
+
+    place-items: center;
+
+    width: 65px;
+    height: 65px;
+
+    margin-bottom: 20px;
+
+    border-radius: 18px;
+
+    background: var(--verde-claro);
+
+    font-size: 2rem;
+
+    animation: flutuar 4s ease-in-out infinite;
+}
+
+.card h3 {
+    margin-bottom: 12px;
+
+    color: var(--azul-escuro);
+
+    font-size: 1.3rem;
+}
+
+.card p {
+    color: var(--cinza-texto);
+}
+
+
+/* =========================================================
+   14. ÓPTICA
+========================================================= */
+
+.optica {
+    background: var(--branco);
+}
+
+.optica-box {
+    position: relative;
+
+    max-width: 900px;
+
+    margin: 20px auto;
+
+    padding: 28px 30px 28px 35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4fbf8,
+            #edf8f6
+        );
+
+    border: 1px solid #dceee9;
+
+    border-left: 6px solid var(--verde);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 5px 20px rgba(3, 47, 54, 0.05);
+
+    transition: var(--transicao);
+}
+
+.optica-box:hover {
+    transform: translateX(6px);
+
+    box-shadow: var(--sombra);
+}
+
+.optica-box h3 {
+    margin-bottom: 10px;
+
+    color: var(--azul-escuro);
+
+    font-size: 1.35rem;
+}
+
+.optica-box p {
+    color: var(--cinza-texto);
+}
+
+
+/* =========================================================
+   15. ESPECTRO DA LUZ
+========================================================= */
+
+.spectra {
+    position: relative;
+
+    max-width: 900px;
+
+    height: 80px;
+
+    margin: 45px auto 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background: linear-gradient(
+        90deg,
+        #ff0000 0%,
+        #ff7300 16%,
+        #ffe600 32%,
+        #16c965 48%,
+        #00bcd4 64%,
+        #2962ff 80%,
+        #7517a8 100%
+    );
+
+    color: var(--branco);
+
+    font-size: 1.1rem;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.6);
+
+    box-shadow: var(--sombra);
+}
+
+.spectra::before,
+.spectra::after {
+    content: "";
+
+    position: absolute;
+
+    width: 15px;
+    height: 15px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    filter: blur(1px);
+}
+
+.spectra::before {
+    left: 20px;
+    top: 18px;
+}
+
+.spectra::after {
+    right: 25px;
+    bottom: 15px;
+}
+
+
+/* =========================================================
+   16. ROBÓTICA
+========================================================= */
+
+.robotics {
+    background:
+        linear-gradient(
+            135deg,
+            #e9f7f7,
+            #f5fbfa
+        );
+}
+
+
+/* =========================================================
+   17. FLUXOGRAMA
+========================================================= */
+
+.flowchart {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 55px;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    border: 1px solid rgba(8, 127, 140, 0.1);
+}
+
+.flow {
+    position: relative;
+
+    min-width: 145px;
+
+    padding: 20px 15px;
+
+    background: var(--branco);
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow:
+        0 6px 20px rgba(3, 47, 54, 0.08);
+
+    transition: var(--transicao);
+}
+
+.flow:hover {
+    transform: translateY(-6px);
+
+    box-shadow: var(--sombra);
+}
+
+.flow strong {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--azul-escuro);
+}
+
+.arrow {
+    color: var(--verde-escuro);
+
+    font-size: 2rem;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   18. SIMULADOR
+========================================================= */
+
+.simulator {
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(110, 231, 124, 0.12),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            var(--azul-profundo),
+            var(--azul-escuro)
+        );
+
+    color: var(--branco);
+
+    overflow: hidden;
+}
+
+.simulator .section-title h2 {
+    color: var(--branco);
+}
+
+.simulator .section-title h2::after {
+    background: linear-gradient(
+        90deg,
+        var(--verde),
+        var(--azul-claro)
+    );
+}
+
+.simulator .section-title p {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.simulation-box {
+    position: relative;
+
+    width: min(650px, 100%);
+
+    margin: auto;
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.13);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.2);
+
+    backdrop-filter: blur(12px);
+}
+
+.simulation-box > p {
+    color: rgba(255, 255, 255, 0.8);
+
+    font-weight: 600;
+}
+
+.temperature {
+    margin: 15px 0;
+
+    color: var(--verde);
+
+    font-size: clamp(3.5rem, 10vw, 5rem);
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    text-shadow:
+        0 5px 25px rgba(110, 231, 124, 0.2);
+}
+
+.status {
+    margin: 25px auto;
+
+    padding: 15px 20px;
+
+    max-width: 500px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    color: rgba(255, 255, 255, 0.9);
+
+    transition: var(--transicao);
+}
+
+
+/* =========================================================
+   19. ACESSIBILIDADE
+========================================================= */
+
+.accessibility {
+    background: var(--branco);
+}
+
+.accessibility-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.accessibility-card {
+    position: relative;
+
+    padding: 30px;
+
+    background: var(--cinza-claro);
+
+    border: 2px solid #dcebea;
+
+    border-radius: 17px;
+
+    transition: var(--transicao);
+}
+
+.accessibility-card:hover {
+    border-color: var(--verde);
+
+    transform: translateY(-5px);
+
+    box-shadow: var(--sombra);
+}
+
+.accessibility-card h3 {
+    margin-bottom: 10px;
+
+    color: var(--azul-escuro);
+
+    font-size: 1.25rem;
+}
+
+.accessibility-card p {
+    color: var(--cinza-texto);
+}
+
+
+/* =========================================================
+   20. IMPACTO SOCIAL
+========================================================= */
+
+.impact {
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(110, 231, 124, 0.2),
+            transparent 30%
+        ),
+        #e5f5f1;
+}
+
+.impact-content {
+    width: min(850px, 100%);
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.impact-content p {
+    margin-bottom: 22px;
+
+    color: var(--cinza-texto);
+
+    font-size: 1.08rem;
+}
+
+.impact-content p:first-child {
+    color: var(--azul-escuro);
+
+    font-size: 1.25rem;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   21. FOOTER
+========================================================= */
+
+footer {
+    padding: 45px 20px;
+
+    background: #021f25;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    text-align: center;
+}
+
+footer p {
+    margin: 7px 0;
+}
+
+footer strong {
+    color: var(--verde);
+
+    font-size: 1.35rem;
+}
+
+
+/* =========================================================
+   22. ANIMAÇÕES
+========================================================= */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes flutuar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+}
+
+
+/* =========================================================
+   23. TABLETS
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        width: 94%;
+    }
+
+    .menu {
+        gap: 2px;
+    }
+
+    .menu li a {
+        padding: 8px 9px;
+
+        font-size: 0.85rem;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-grid {
+        gap: 35px;
+    }
+
+    .flowchart {
+        gap: 8px;
+    }
+
+    .flow {
+        min-width: 125px;
+
+        font-size: 0.9rem;
+    }
+
+}
+
+
+/* =========================================================
+   24. CELULARES
+========================================================= */
+
+@media (max-width: 800px) {
+
+    html {
+        scroll-padding-top: 70px;
+    }
+
+    .navbar {
+        min-height: 70px;
+    }
+
+    .menu-btn {
+        display: grid;
+        place-items: center;
+    }
+
+    .menu {
+        position: absolute;
+
+        top: 70px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 20px;
+
+        display: none;
+
+        flex-direction: column;
+
+        background: rgba(3, 47, 54, 0.98);
+
+        border-top:
+            1px solid rgba(255, 255, 255, 0.08);
+
+        box-shadow:
+            0 15px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .menu.active {
+        display: flex;
+
+        animation: aparecer 0.25s ease;
+    }
+
+    .menu li {
+        width: 100%;
+    }
+
+    .menu li a {
+        width: 100%;
+
+        padding: 12px;
+
+        text-align: center;
+    }
+
+    .hero {
+        min-height: calc(100vh - 70px);
+
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .hero::after {
+        height: 100px;
+
+        bottom: -60px;
+    }
+
+    section {
+        padding: 75px 15px;
+    }
+
+    .container {
+        width: min(94%, 650px);
+    }
+
+    .section-title {
+        margin-bottom: 40px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .project-image {
+        min-height: 300px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .accessibility-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .flowchart {
+        flex-direction: column;
+
+        padding: 25px 15px;
+    }
+
+    .flow {
+        width: min(100%, 300px);
+    }
+
+    .arrow {
+        transform: rotate(90deg);
+
+        margin: 3px 0;
+    }
+
+    .simulation-box {
+        padding: 35px 20px;
+    }
+
+}
+
+
+/* =========================================================
+   25. CELULARES PEQUENOS
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .logo {
+        font-size: 1.25rem;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+
+        max-width: 300px;
+    }
+
+    .optica-box {
+        padding: 22px;
+    }
+
+    .spectra {
+        height: 65px;
+
+        font-size: 0.8rem;
+
+        letter-spacing: 1px;
+    }
+
+    .project-list li {
+        font-size: 0.95rem;
+    }
+
+    .temperature {
+        font-size: 4rem;
+    }
+
+}
+
+
+/* =========================================================
+   26. REDUÇÃO DE MOVIMENTO
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        scroll-behavior: auto !important;
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+
+    .card-icon {
+        animation: none;
+    }
+
+}
+
+
+/* =========================================================
+   27. ALTO CONTRASTE
+========================================================= */
+
+@media (prefers-contrast: more) {
+
+    body {
+        color: #000000;
+    }
+
+    .card,
+    .accessibility-card,
+    .flow {
+        border: 2px solid #000000;
+    }
+
+    .menu li a,
+    .btn {
+        border: 2px solid currentColor;
+    }
+
+}
