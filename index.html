@@ -3,17 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-        content="Projeto Integrador do CEP sobre aquecimento sustentável e automatizado de piscina térmica utilizando energia solar, óptica, robótica e programação.">
-
+    <meta name="description" content="Projeto Integrador do CEP sobre aquecimento sustentável e automatizado de piscina térmica utilizando energia solar, óptica, robótica e programação.">
     <title>EcoPool CEP | Aquecimento Sustentável</title>
 
     <style>
         /* ==============================
            CONFIGURAÇÕES GERAIS
         ============================== */
-
         * {
             margin: 0;
             padding: 0;
@@ -28,24 +24,13 @@
             color: #173b42;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        button {
-            font: inherit;
-        }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+        button { font: inherit; }
 
         /* ==============================
            CABEÇALHO
         ============================== */
-
         header {
             position: sticky;
             top: 0;
@@ -64,31 +49,12 @@
             justify-content: space-between;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
+        .logo { font-size: 1.5rem; font-weight: bold; }
+        .logo span { color: #7ee081; }
 
-        .logo span {
-            color: #7ee081;
-        }
-
-        .menu {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
-        .menu a {
-            color: white;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .menu a:hover,
-        .menu a:focus {
-            color: #7ee081;
-        }
+        .menu { display: flex; list-style: none; gap: 25px; }
+        .menu a { color: white; font-weight: bold; transition: 0.3s; }
+        .menu a:hover, .menu a:focus { color: #7ee081; }
 
         .menu-btn {
             display: none;
@@ -103,7 +69,6 @@
         /* ==============================
            HERO
         ============================== */
-
         .hero {
             min-height: 90vh;
             display: flex;
@@ -111,32 +76,14 @@
             justify-content: center;
             text-align: center;
             padding: 70px 20px;
-            background:
-                linear-gradient(
-                    rgba(3, 52, 60, 0.88),
-                    rgba(3, 52, 60, 0.88)
-                ),
-                url("assets/piscina-solar.jpg") center/cover;
+            background: linear-gradient(rgba(3, 52, 60, 0.88), rgba(3, 52, 60, 0.88)), url("https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1920&q=80") center/cover;
             color: white;
         }
 
-        .hero-content {
-            max-width: 850px;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 5rem);
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span {
-            color: #7ee081;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
+        .hero-content { max-width: 850px; }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 5rem); margin-bottom: 20px; }
+        .hero h1 span { color: #7ee081; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; }
 
         .btn {
             display: inline-block;
@@ -149,53 +96,21 @@
             cursor: pointer;
             transition: 0.3s;
         }
-
-        .btn:hover,
-        .btn:focus {
-            transform: translateY(-3px);
-            background: #a4f3a6;
-        }
+        .btn:hover, .btn:focus { transform: translateY(-3px); background: #a4f3a6; }
 
         /* ==============================
            SEÇÕES
         ============================== */
-
-        section {
-            padding: 80px 20px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 2.4rem;
-            color: #075b64;
-            margin-bottom: 10px;
-        }
-
-        .section-title p {
-            max-width: 700px;
-            margin: auto;
-            color: #49666b;
-        }
+        section { padding: 80px 20px; }
+        .container { max-width: 1100px; margin: auto; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.4rem; color: #075b64; margin-bottom: 10px; }
+        .section-title p { max-width: 700px; margin: auto; color: #49666b; }
 
         /* ==============================
            CARDS
         ============================== */
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
+        .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
         .card {
             background: white;
             padding: 30px;
@@ -203,111 +118,48 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
             transition: 0.3s;
         }
-
-        .card:hover {
-            transform: translateY(-7px);
-        }
-
-        .card-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-
-        .card h3 {
-            margin-bottom: 12px;
-            color: #075b64;
-        }
+        .card:hover { transform: translateY(-7px); }
+        .card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .card h3 { margin-bottom: 12px; color: #075b64; }
 
         /* ==============================
-           PROJETO
+           PROJETO (COM A IMAGEM ATUALIZADA)
         ============================== */
+        .project { background: #e5f5f1; }
+        .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .project-text h3 { font-size: 1.8rem; margin-bottom: 15px; color: #075b64; }
+        .project-text p { margin-bottom: 15px; }
+        .project-list { list-style: none; margin-top: 20px; }
+        .project-list li { margin-bottom: 12px; padding-left: 25px; position: relative; }
+        .project-list li::before { content: "✓"; position: absolute; left: 0; color: #218c4a; font-weight: bold; }
 
-        .project {
-            background: #e5f5f1;
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+        /* ESTILOS DA NOVA IMAGEM */
+        .project-image-container {
+            display: flex;
+            justify-content: center;
             align-items: center;
         }
-
-        .project-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: #075b64;
-        }
-
-        .project-text p {
-            margin-bottom: 15px;
-        }
-
-        .project-list {
-            list-style: none;
-            margin-top: 20px;
-        }
-
-        .project-list li {
-            margin-bottom: 12px;
-            padding-left: 25px;
-            position: relative;
-        }
-
-        .project-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #218c4a;
-            font-weight: bold;
-        }
-
-        .project-image {
-            min-height: 350px;
+        .imagem-ecopool {
+            width: 100%;
+            max-width: 500px;
             border-radius: 20px;
-            background:
-                linear-gradient(
-                    rgba(0, 80, 90, 0.2),
-                    rgba(0, 80, 90, 0.2)
-                ),
-                url("assets/coletor-solar.jpg") center/cover;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            object-fit: cover;
+            transition: transform 0.3s ease;
         }
+        .imagem-ecopool:hover { transform: scale(1.02); }
 
         /* ==============================
            ÓPTICA
         ============================== */
-
-        .optica {
-            background: white;
-        }
-
-        .optica-box {
-            background: #f0faf7;
-            border-left: 6px solid #7ee081;
-            padding: 25px;
-            margin-top: 25px;
-            border-radius: 10px;
-        }
-
-        .optica-box h3 {
-            margin-bottom: 10px;
-            color: #075b64;
-        }
-
+        .optica { background: white; }
+        .optica-box { background: #f0faf7; border-left: 6px solid #7ee081; padding: 25px; margin-top: 25px; border-radius: 10px; }
+        .optica-box h3 { margin-bottom: 10px; color: #075b64; }
         .spectra {
             margin-top: 40px;
             height: 70px;
             border-radius: 15px;
-            background: linear-gradient(
-                90deg,
-                #ff0000,
-                #ff7b00,
-                #fff000,
-                #00c853,
-                #00bcd4,
-                #2962ff,
-                #7b1fa2
-            );
+            background: linear-gradient(90deg, #ff0000, #ff7b00, #fff000, #00c853, #00bcd4, #2962ff, #7b1fa2);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -319,20 +171,8 @@
         /* ==============================
            ROBÓTICA
         ============================== */
-
-        .robotics {
-            background: #edf7f8;
-        }
-
-        .flowchart {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-
+        .robotics { background: #edf7f8; }
+        .flowchart { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 40px; }
         .flow {
             background: white;
             padding: 20px;
@@ -341,125 +181,44 @@
             min-width: 150px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         }
-
-        .flow strong {
-            display: block;
-            color: #075b64;
-            margin-bottom: 7px;
-        }
-
-        .arrow {
-            font-size: 2rem;
-            color: #218c4a;
-        }
+        .flow strong { display: block; color: #075b64; margin-bottom: 7px; }
+        .arrow { font-size: 2rem; color: #218c4a; }
 
         /* ==============================
            SIMULADOR
         ============================== */
-
-        .simulator {
-            background: #063c45;
-            color: white;
-            text-align: center;
-        }
-
-        .simulator .section-title h2,
-        .simulator .section-title p {
-            color: white;
-        }
-
-        .temperature {
-            font-size: 4rem;
-            font-weight: bold;
-            margin: 25px 0;
-            color: #7ee081;
-        }
-
-        .simulation-box {
-            max-width: 650px;
-            margin: auto;
-            background: rgba(255,255,255,0.08);
-            padding: 35px;
-            border-radius: 20px;
-        }
-
-        .status {
-            margin: 20px 0;
-            padding: 15px;
-            border-radius: 10px;
-            background: rgba(255,255,255,0.1);
-        }
+        .simulator { background: #063c45; color: white; text-align: center; }
+        .simulator .section-title h2, .simulator .section-title p { color: white; }
+        .temperature { font-size: 4rem; font-weight: bold; margin: 25px 0; color: #7ee081; }
+        .simulation-box { max-width: 650px; margin: auto; background: rgba(255,255,255,0.08); padding: 35px; border-radius: 20px; }
+        .status { margin: 20px 0; padding: 15px; border-radius: 10px; background: rgba(255,255,255,0.1); }
 
         /* ==============================
            ACESSIBILIDADE
         ============================== */
-
-        .accessibility {
-            background: white;
-        }
-
-        .accessibility-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .accessibility-card {
-            padding: 25px;
-            border-radius: 15px;
-            background: #f4f9f8;
-            border: 2px solid #d7ebe6;
-        }
-
-        .accessibility-card h3 {
-            color: #075b64;
-            margin-bottom: 10px;
-        }
+        .accessibility { background: white; }
+        .accessibility-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
+        .accessibility-card { padding: 25px; border-radius: 15px; background: #f4f9f8; border: 2px solid #d7ebe6; }
+        .accessibility-card h3 { color: #075b64; margin-bottom: 10px; }
 
         /* ==============================
            IMPACTO
         ============================== */
-
-        .impact {
-            background: #e5f5f1;
-        }
-
-        .impact-content {
-            text-align: center;
-            max-width: 850px;
-            margin: auto;
-        }
-
-        .impact-content p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-        }
+        .impact { background: #e5f5f1; }
+        .impact-content { text-align: center; max-width: 850px; margin: auto; }
+        .impact-content p { font-size: 1.1rem; margin-bottom: 20px; }
 
         /* ==============================
            RODAPÉ
         ============================== */
-
-        footer {
-            background: #032d34;
-            color: white;
-            text-align: center;
-            padding: 35px 20px;
-        }
-
-        footer strong {
-            color: #7ee081;
-        }
+        footer { background: #032d34; color: white; text-align: center; padding: 35px 20px; }
+        footer strong { color: #7ee081; }
 
         /* ==============================
            RESPONSIVIDADE
         ============================== */
-
         @media (max-width: 800px) {
-
-            .menu-btn {
-                display: block;
-            }
-
+            .menu-btn { display: block; }
             .menu {
                 display: none;
                 position: absolute;
@@ -471,768 +230,257 @@
                 padding: 25px;
                 text-align: center;
             }
-
-            .menu.active {
-                display: flex;
-            }
-
-            .cards,
-            .project-grid,
-            .accessibility-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .flowchart {
-                flex-direction: column;
-            }
-
-            .arrow {
-                transform: rotate(90deg);
-            }
+            .menu.active { display: flex; }
+            .cards, .project-grid, .accessibility-grid { grid-template-columns: 1fr; }
+            .flowchart { flex-direction: column; }
         }
 
-        /* ==============================
-           REDUÇÃO DE MOVIMENTO
-        ============================== */
-
         @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                scroll-behavior: auto !important;
-                transition: none !important;
-            }
+            *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
         }
     </style>
 </head>
 
 <body>
-
-    <!-- ==============================
-         CABEÇALHO E MENU
-    ============================== -->
-
     <header>
         <nav class="navbar" aria-label="Navegação principal">
-
-            <div class="logo">
-                Eco<span>Pool</span> CEP
-            </div>
-
-            <button
-                class="menu-btn"
-                id="menuBtn"
-                aria-label="Abrir menu"
-                aria-expanded="false">
-                ☰
-            </button>
-
+            <div class="logo">Eco<span>Pool</span> CEP</div>
+            <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">☰</button>
             <ul class="menu" id="menu">
-
-                <li>
-                    <a href="#inicio">Início</a>
-                </li>
-
-                <li>
-                    <a href="#projeto">Projeto</a>
-                </li>
-
-                <li>
-                    <a href="#optica">Óptica</a>
-                </li>
-
-                <li>
-                    <a href="#robotica">Robótica</a>
-                </li>
-
-                <li>
-                    <a href="#simulador">Simulador</a>
-                </li>
-
-                <li>
-                    <a href="#acessibilidade">Acessibilidade</a>
-                </li>
-
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#projeto">Projeto</a></li>
+                <li><a href="#optica">Óptica</a></li>
+                <li><a href="#robotica">Robótica</a></li>
+                <li><a href="#simulador">Simulador</a></li>
+                <li><a href="#acessibilidade">Acessibilidade</a></li>
             </ul>
-
         </nav>
     </header>
 
-
-    <!-- ==============================
-         INÍCIO
-    ============================== -->
-
     <main>
-
         <section class="hero" id="inicio">
-
             <div class="hero-content">
-
-                <h1>
-                    Eco<span>Pool</span>
-                </h1>
-
-                <p>
-                    Aquecimento inteligente, sustentável e acessível
-                    para a piscina térmica do CEP.
-                </p>
-
-                <a href="#projeto" class="btn">
-                    Conheça o projeto
-                </a>
-
+                <h1>Eco<span>Pool</span></h1>
+                <p>Aquecimento inteligente, sustentável e acessível para a piscina térmica do CEP.</p>
+                <a href="#projeto" class="btn">Conheça o projeto</a>
             </div>
-
         </section>
 
-
-        <!-- ==============================
-             PROJETO
-        ============================== -->
-
         <section class="project" id="projeto">
-
             <div class="container">
-
                 <div class="section-title">
-
                     <h2>Nosso Projeto</h2>
-
-                    <p>
-                        Uma solução integrada que combina energia solar,
-                        óptica, sensores, automação e programação.
-                    </p>
-
+                    <p>Uma solução integrada que combina energia solar, óptica, sensores, automação e programação.</p>
                 </div>
 
                 <div class="project-grid">
-
                     <div class="project-text">
-
-                        <h3>
-                            Aquecimento sustentável
-                        </h3>
-
-                        <p>
-                            O projeto propõe um sistema automatizado
-                            para controlar a temperatura da piscina
-                            térmica utilizando principalmente a energia
-                            proveniente da radiação solar.
-                        </p>
-
-                        <p>
-                            Coletores solares absorvem a radiação,
-                            transformando a energia luminosa em energia
-                            térmica. Sensores monitoram a temperatura
-                            da água e enviam informações para um sistema
-                            de controle.
-                        </p>
-
+                        <h3>Aquecimento sustentável</h3>
+                        <p>O projeto propõe um sistema automatizado para controlar a temperatura da piscina térmica utilizando principalmente a energia proveniente da radiação solar.</p>
+                        <p>Coletores solares absorvem a radiação, transformando a energia luminosa em energia térmica. Sensores monitoram a temperatura da água e enviam informações para um sistema de controle.</p>
                         <ul class="project-list">
-
-                            <li>
-                                Aproveitamento da energia solar
-                            </li>
-
-                            <li>
-                                Monitoramento automático da temperatura
-                            </li>
-
-                            <li>
-                                Redução do desperdício energético
-                            </li>
-
-                            <li>
-                                Sistema pensado para acessibilidade
-                            </li>
-
+                            <li>Aproveitamento da energia solar</li>
+                            <li>Monitoramento automático da temperatura</li>
+                            <li>Redução do desperdício energético</li>
+                            <li>Sistema pensado para acessibilidade</li>
                         </ul>
-
                     </div>
 
-                    <div
-                        class="project-image"
-                        role="img"
-                        aria-label="Representação de coletores solares utilizados para aquecimento de água">
+                    <!-- AQUI ESTÁ A IMAGEM PROGRAMADA -->
+                    <div class="project-image-container">
+                        <img 
+                            src="imagens/minha-imagem.jpg" 
+                            alt="Foto do sistema de aquecimento solar EcoPool" 
+                            class="imagem-ecopool"
+                        >
                     </div>
-
                 </div>
-
             </div>
-
         </section>
-
-
-        <!-- ==============================
-             TECNOCIÊNCIA
-        ============================== -->
 
         <section id="tecnociencia">
-
             <div class="container">
-
                 <div class="section-title">
-
                     <h2>Tecnociência</h2>
-
-                    <p>
-                        A solução integra conhecimentos científicos
-                        e tecnológicos para resolver um problema real.
-                    </p>
-
+                    <p>A solução integra conhecimentos científicos e tecnológicos para resolver um problema real.</p>
                 </div>
-
                 <div class="cards">
-
                     <article class="card">
-
                         <div class="card-icon">☀️</div>
-
-                        <h3>
-                            Energia Solar
-                        </h3>
-
-                        <p>
-                            A radiação solar é captada pelos coletores
-                            e utilizada como fonte de energia para
-                            aquecer a água da piscina.
-                        </p>
-
+                        <h3>Energia Solar</h3>
+                        <p>A radiação solar é captada pelos coletores e utilizada como fonte de energia para aquecer a água da piscina.</p>
                     </article>
-
                     <article class="card">
-
                         <div class="card-icon">🔬</div>
-
-                        <h3>
-                            Ciência
-                        </h3>
-
-                        <p>
-                            Física, óptica e transferência de calor
-                            são utilizadas para compreender e melhorar
-                            o funcionamento do sistema.
-                        </p>
-
+                        <h3>Ciência</h3>
+                        <p>Física, óptica e transferência de calor são utilizadas para compreender e melhorar o funcionamento do sistema.</p>
                     </article>
-
                     <article class="card">
-
                         <div class="card-icon">🤖</div>
-
-                        <h3>
-                            Tecnologia
-                        </h3>
-
-                        <p>
-                            Sensores, atuadores e programação permitem
-                            automatizar o controle do aquecimento.
-                        </p>
-
+                        <h3>Tecnologia</h3>
+                        <p>Sensores, atuadores e programação permitem automatizar o controle do aquecimento.</p>
                     </article>
-
                 </div>
-
             </div>
-
         </section>
-
-
-        <!-- ==============================
-             ÓPTICA
-        ============================== -->
 
         <section class="optica" id="optica">
-
             <div class="container">
-
                 <div class="section-title">
-
                     <h2>Óptica Aplicada</h2>
-
-                    <p>
-                        Como o comportamento da luz influencia a
-                        eficiência dos coletores solares?
-                    </p>
-
+                    <p>Como o comportamento da luz influencia a eficiência dos coletores solares?</p>
                 </div>
-
                 <div class="optica-box">
-
-                    <h3>
-                        Absorção da radiação
-                    </h3>
-
-                    <p>
-                        Materiais de cores escuras tendem a absorver
-                        maior quantidade de radiação luminosa, enquanto
-                        superfícies claras refletem uma parcela maior
-                        da luz incidente. Por isso, materiais escuros
-                        podem ser utilizados na superfície dos
-                        coletores solares para favorecer a absorção
-                        de energia.
-                    </p>
-
+                    <h3>Absorção da radiação</h3>
+                    <p>Materiais de cores escuras tendem a absorver maior quantidade de radiação luminosa, enquanto superfícies claras refletem uma parcela maior da luz incidente.</p>
                 </div>
-
                 <div class="optica-box">
-
-                    <h3>
-                        Reflexão e refração
-                    </h3>
-
-                    <p>
-                        A reflexão ocorre quando a luz retorna ao meio
-                        de origem após atingir uma superfície. Já a
-                        refração acontece quando a luz passa de um meio
-                        para outro, alterando sua velocidade e podendo
-                        mudar sua direção. Esses fenômenos precisam ser
-                        considerados na escolha dos materiais utilizados
-                        no sistema.
-                    </p>
-
+                    <h3>Reflexão e refração</h3>
+                    <p>A reflexão ocorre quando a luz retorna ao meio de origem. A refração acontece quando a luz passa de um meio para outro, alterando sua velocidade.</p>
                 </div>
-
                 <div class="optica-box">
-
-                    <h3>
-                        Relação com o Disco de Newton
-                    </h3>
-
-                    <p>
-                        O Disco de Newton demonstra que a luz branca
-                        pode ser associada às diferentes cores do
-                        espectro visível. No projeto, essa ideia ajuda
-                        a compreender que os materiais interagem de
-                        maneiras diferentes com a radiação luminosa.
-                        Para o coletor solar, buscamos materiais que
-                        favoreçam a absorção da energia recebida.
-                    </p>
-
+                    <h3>Relação com o Disco de Newton</h3>
+                    <p>O Disco de Newton demonstra que a luz branca pode ser associada às diferentes cores do espectro visível, ajudando a compreender a interação dos materiais com a radiação.</p>
                 </div>
-
-                <div
-                    class="spectra"
-                    aria-label="Faixa representando as cores do espectro visível">
-                    ESPECTRO DA LUZ
-                </div>
-
+                <div class="spectra" aria-label="Faixa representando as cores do espectro visível">ESPECTRO DA LUZ</div>
             </div>
-
         </section>
-
-
-        <!-- ==============================
-             ROBÓTICA
-        ============================== -->
 
         <section class="robotics" id="robotica">
-
             <div class="container">
-
                 <div class="section-title">
-
                     <h2>Robótica e Programação</h2>
-
-                    <p>
-                        Sensores e atuadores trabalham juntos para
-                        automatizar o aquecimento da piscina.
-                    </p>
-
+                    <p>Sensores e atuadores trabalham juntos para automatizar o aquecimento da piscina.</p>
                 </div>
-
                 <div class="cards">
-
                     <article class="card">
-
                         <div class="card-icon">🌡️</div>
-
-                        <h3>
-                            Sensor de temperatura
-                        </h3>
-
-                        <p>
-                            Mede constantemente a temperatura da água
-                            e envia os dados ao controlador.
-                        </p>
-
+                        <h3>Sensor de temperatura</h3>
+                        <p>Mede constantemente a temperatura da água e envia os dados ao controlador.</p>
                     </article>
-
                     <article class="card">
-
                         <div class="card-icon">🧠</div>
-
-                        <h3>
-                            Controlador
-                        </h3>
-
-                        <p>
-                            Analisa os dados recebidos e decide se o
-                            sistema de aquecimento deve ser acionado.
-                        </p>
-
+                        <h3>Controlador</h3>
+                        <p>Analisa os dados recebidos e decide se o sistema de aquecimento deve ser acionado.</p>
                     </article>
-
                     <article class="card">
-
                         <div class="card-icon">⚙️</div>
-
-                        <h3>
-                            Atuadores
-                        </h3>
-
-                        <p>
-                            Bombas e válvulas podem ser acionadas para
-                            controlar a circulação da água aquecida.
-                        </p>
-
+                        <h3>Atuadores</h3>
+                        <p>Bombas e válvulas podem ser acionadas para controlar a circulação da água aquecida.</p>
                     </article>
-
                 </div>
-
-
                 <div class="flowchart" aria-label="Fluxograma do sistema">
-
-                    <div class="flow">
-
-                        <strong>Sensor</strong>
-
-                        Mede a temperatura
-
-                    </div>
-
+                    <div class="flow"><strong>Sensor</strong>Mede a temperatura</div>
                     <div class="arrow">→</div>
-
-                    <div class="flow">
-
-                        <strong>Controlador</strong>
-
-                        Analisa os dados
-
-                    </div>
-
+                    <div class="flow"><strong>Controlador</strong>Analisa os dados</div>
                     <div class="arrow">→</div>
-
-                    <div class="flow">
-
-                        <strong>Decisão</strong>
-
-                        Temperatura está baixa?
-
-                    </div>
-
+                    <div class="flow"><strong>Decisão</strong>Temperatura está baixa?</div>
                     <div class="arrow">→</div>
-
-                    <div class="flow">
-
-                        <strong>Atuador</strong>
-
-                        Aciona a circulação
-
-                    </div>
-
+                    <div class="flow"><strong>Atuador</strong>Aciona a circulação</div>
                     <div class="arrow">→</div>
-
-                    <div class="flow">
-
-                        <strong>Piscina</strong>
-
-                        Água aquecida
-
-                    </div>
-
+                    <div class="flow"><strong>Piscina</strong>Água aquecida</div>
                 </div>
-
             </div>
-
         </section>
-
-
-        <!-- ==============================
-             SIMULADOR
-        ============================== -->
 
         <section class="simulator" id="simulador">
-
             <div class="container">
-
                 <div class="section-title">
-
                     <h2>Simulador do Sistema</h2>
-
-                    <p>
-                        Experimente uma representação simples do
-                        funcionamento automático do projeto.
-                    </p>
-
+                    <p>Experimente uma representação simples do funcionamento automático do projeto.</p>
                 </div>
-
                 <div class="simulation-box">
-
-                    <p>
-                        Temperatura atual da piscina:
-                    </p>
-
-                    <div
-                        class="temperature"
-                        id="temperature"
-                        aria-live="polite">
-                        25°C
-                    </div>
-
-                    <div
-                        class="status"
-                        id="status"
-                        aria-live="polite">
-
-                        Sistema em espera.
-
-                    </div>
-
-                    <button
-                        class="btn"
-                        id="simulateBtn">
-                        Simular aquecimento
-                    </button>
-
+                    <p>Temperatura atual da piscina:</p>
+                    <div class="temperature" id="temperature" aria-live="polite">25°C</div>
+                    <div class="status" id="status" aria-live="polite">Sistema em espera.</div>
+                    <button class="btn" id="simulateBtn">Simular aquecimento</button>
                 </div>
-
             </div>
-
         </section>
-
-
-        <!-- ==============================
-             ACESSIBILIDADE
-        ============================== -->
 
         <section class="accessibility" id="acessibilidade">
-
             <div class="container">
-
                 <div class="section-title">
-
                     <h2>Acessibilidade Digital</h2>
-
-                    <p>
-                        Tecnologia também deve ser acessível.
-                        Nosso site foi pensado para diferentes usuários.
-                    </p>
-
+                    <p>Tecnologia também deve ser acessível. Nosso site foi pensado para diferentes usuários.</p>
                 </div>
-
                 <div class="accessibility-grid">
-
                     <article class="accessibility-card">
-
-                        <h3>
-                            🎨 Contraste
-                        </h3>
-
-                        <p>
-                            Utilizamos cores com contraste adequado
-                            entre texto e fundo para facilitar a leitura.
-                        </p>
-
+                        <h3>🎨 Contraste</h3>
+                        <p>Utilizamos cores com contraste adequado entre texto e fundo para facilitar a leitura.</p>
                     </article>
-
                     <article class="accessibility-card">
-
-                        <h3>
-                            🖼️ Texto alternativo
-                        </h3>
-
-                        <p>
-                            Imagens possuem descrições alternativas
-                            para usuários que utilizam leitores de tela.
-                        </p>
-
+                        <h3>🖼️ Texto alternativo</h3>
+                        <p>Imagens possuem descrições alternativas para usuários que utilizam leitores de tela.</p>
                     </article>
-
                     <article class="accessibility-card">
-
-                        <h3>
-                            🔤 Fontes legíveis
-                        </h3>
-
-                        <p>
-                            Utilizamos fontes simples e tamanhos
-                            adequados para facilitar a compreensão.
-                        </p>
-
+                        <h3>🔤 Fontes legíveis</h3>
+                        <p>Utilizamos fontes simples e tamanhos adequados para facilitar a compreensão.</p>
                     </article>
-
                     <article class="accessibility-card">
-
-                        <h3>
-                            🧭 Navegação clara
-                        </h3>
-
-                        <p>
-                            O menu possui seções organizadas e links
-                            que facilitam a navegação pelo conteúdo.
-                        </p>
-
+                        <h3>🧭 Navegação clara</h3>
+                        <p>O menu possui seções organizadas e links que facilitam a navegação pelo conteúdo.</p>
                     </article>
-
                 </div>
-
             </div>
-
         </section>
-
-
-        <!-- ==============================
-             IMPACTO SOCIAL
-        ============================== -->
 
         <section class="impact" id="impacto">
-
             <div class="container">
-
                 <div class="section-title">
-
                     <h2>Impacto Social e Ambiental</h2>
-
                 </div>
-
                 <div class="impact-content">
-
-                    <p>
-                        O EcoPool busca demonstrar que a tecnologia
-                        pode contribuir para uma escola mais sustentável,
-                        econômica e inclusiva.
-                    </p>
-
-                    <p>
-                        Ao utilizar uma fonte renovável de energia e
-                        automatizar o controle da temperatura, o projeto
-                        pode contribuir para o uso mais consciente dos
-                        recursos naturais e energéticos.
-                    </p>
-
-                    <p>
-                        Além disso, o desenvolvimento de uma interface
-                        acessível mostra que inovação e inclusão devem
-                        caminhar juntas.
-                    </p>
-
+                    <p>O EcoPool busca demonstrar que a tecnologia pode contribuir para uma escola mais sustentável, econômica e inclusiva.</p>
+                    <p>Ao utilizar uma fonte renovável de energia e automatizar o controle da temperatura, o projeto pode contribuir para o uso mais consciente dos recursos naturais e energéticos.</p>
+                    <p>Além disso, o desenvolvimento de uma interface acessível mostra que inovação e inclusão devem caminhar juntas.</p>
                 </div>
-
             </div>
-
         </section>
-
     </main>
 
-
-    <!-- ==============================
-         RODAPÉ
-    ============================== -->
-
     <footer>
-
-        <p>
-            <strong>EcoPool CEP</strong>
-        </p>
-
-        <p>
-            Projeto Integrador — Tecnociência, Óptica,
-            Robótica, Programação e Acessibilidade.
-        </p>
-
-        <p>
-            © 2026 — Projeto desenvolvido para a comunidade escolar.
-        </p>
-
+        <p><strong>EcoPool CEP</strong></p>
+        <p>Projeto Integrador — Tecnociência, Óptica, Robótica, Programação e Acessibilidade.</p>
+        <p>© 2026 — Projeto desenvolvido para a comunidade escolar.</p>
     </footer>
 
-
-    <!-- ==============================
-         JAVASCRIPT
-    ============================== -->
-
     <script>
-
-        /* MENU MOBILE */
-
         const menuBtn = document.getElementById("menuBtn");
         const menu = document.getElementById("menu");
 
         menuBtn.addEventListener("click", () => {
-
             const ativo = menu.classList.toggle("active");
-
-            menuBtn.setAttribute(
-                "aria-expanded",
-                ativo
-            );
-
+            menuBtn.setAttribute("aria-expanded", ativo);
         });
-
-
-        /* FECHAR MENU AO CLICAR */
 
         document.querySelectorAll(".menu a").forEach(link => {
-
             link.addEventListener("click", () => {
-
                 menu.classList.remove("active");
-
-                menuBtn.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
+                menuBtn.setAttribute("aria-expanded", "false");
             });
-
         });
 
-
-        /* SIMULADOR */
-
-        const temperature =
-            document.getElementById("temperature");
-
-        const status =
-            document.getElementById("status");
-
-        const simulateBtn =
-            document.getElementById("simulateBtn");
-
+        const temperature = document.getElementById("temperature");
+        const status = document.getElementById("status");
+        const simulateBtn = document.getElementById("simulateBtn");
         let currentTemperature = 25;
 
         simulateBtn.addEventListener("click", () => {
-
             simulateBtn.disabled = true;
-
-            status.textContent =
-                "☀️ Coletor solar ativado. Aquecendo a piscina...";
+            status.textContent = "☀️ Coletor solar ativado. Aquecendo a piscina...";
 
             let interval = setInterval(() => {
-
                 currentTemperature++;
-
-                temperature.textContent =
-                    currentTemperature + "°C";
+                temperature.textContent = currentTemperature + "°C";
 
                 if (currentTemperature >= 30) {
-
                     clearInterval(interval);
-
-                    status.textContent =
-                        "✅ Temperatura ideal atingida! Sistema em modo de manutenção.";
-
+                    status.textContent = "✅ Temperatura ideal atingida! Sistema em modo de manutenção.";
                     simulateBtn.disabled = false;
-
                 }
-
             }, 600);
-
         });
-
     </script>
-
 </body>
-</html>
+</html>  
